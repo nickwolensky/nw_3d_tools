@@ -1,0 +1,29 @@
+These are the plans for my rigging solution
+
+1. Rigging tools and modules that can be used to build rigs 
+2. User interface that can be used in conjunction with the rigging tools to easily and quickly build rigs with a click of the button
+
+RIGGING TOOLS
+- A collection of modules/tools that are created as building blocks and later combined in other python modules to piece together specific pieces of a rig
+- Rigging tools to build biped, quadruped, etc. character rigs as well as non-conventional rigs very easily. The building blocks will allow me to piece
+together characters from a number of predefined parts.
+- Also a set of tools for prop rigging
+- Allow right-click marking menus over different "rig modules" allowing for the different parts to be rebuilt for various setups (ex. arm setup with ik/fk switching
+can be changed to include just an fk arm or just an ik arm or some other setup). This will require keeping track of nodes and deleting them out in order to
+rebuild.
+- Example modules include base rig modules, rig preset modules, blueprint modules, utilities/tool modules, and UI (just user interface code) modules that draw on the 
+other modules
+- There will need to be python tools that can save out data for use inbetween sessions and when rebuilding rigs (skin clusters, blendshape weights, other deformer weights, control shapes, etc.)
+
+
+
+USER-INTERFACE
+- Build using PyQT/PySide - Start with Maya 2017 which now uses PySide2/PyQt5
+- The user-interface can allow for the user to specify a new character and save out a rig directory structure
+- This will also automatically generate a rig.py file per character
+- Blueprint --> Pieced together rig modules as a template for easy placing of joints
+	-- By default, two presets: biped, quadruped
+	-- Allow for creation of new presets. This involves taking module blueprints like arm, leg, spine, and combining them together. Saves out the data for future use
+- Once Blueprint is set by the user, convert the blueprint to a skeleton
+- Skeleton can then be converted to a full body rig with controls
+- The User-interface will call the rig.py file every time to rebuild the rig - The user can adjust the rig.py file for specific character rig requirements

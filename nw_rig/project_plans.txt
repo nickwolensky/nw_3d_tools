@@ -27,3 +27,13 @@ USER-INTERFACE
 - Once Blueprint is set by the user, convert the blueprint to a skeleton
 - Skeleton can then be converted to a full body rig with controls
 - The User-interface will call the rig.py file every time to rebuild the rig - The user can adjust the rig.py file for specific character rig requirements
+- User interface can have multiple tabs -- Blueprint (contains module blueprints and presets)
+										-- Lock and convert to skeleton/control rig (contains buttons for interacting with rig)
+										-- Animation (keying, saving poses, mirror, animation presets, etc)
+- If multiple rigs are found within a scene, add them to the user-interface
+
+
+Start blueprint -- add modules if needed -- pose skeleton -- lock (turn to skeleton)
+Skeleton -- convert to rig (with controls) -- (edit rig.py -- rebuild) --> LOOP
+														<--------------------]
+
